@@ -1,5 +1,8 @@
-import contact from "../../assets/contact.svg";
-import style from "./Contact.module.css";
+import contact from '@/assets/contact.svg'
+import style from './Contact.module.css'
+import Buttons from '@/components/Buttons/Buttons'
+import { MdMessage } from 'react-icons/md'
+import { IoCallSharp } from "react-icons/io5";
 
 const Contactheader = () => {
   return (
@@ -15,8 +18,8 @@ const Contactheader = () => {
       <section className="hero">
         <div className="text-section">
           <div className="btn-row">
-            <button>VIA SUPPORT CHAT</button>
-            <button>VIA CALL</button>
+            <Buttons text="VIA SUPPORT CHAT" Icon={ MdMessage } fontSize="24px"/>
+            <Buttons text="VIA CALL" Icon={ IoCallSharp }   fontSize="24px"/>
           </div>
 
           <button className="email-btn">VIA EMAIL FORM</button>

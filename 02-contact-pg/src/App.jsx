@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import './App.css'
-import Navigation from "./components/Navigation/Navigation.jsx"
-import Contactheader from "./components/Contactheader/Contactheader.jsx"
+import '@/App.css'
+import Navigation from '@/components/Navigation/Navigation'
+import Contactheader from '@/components/Contactheader/Contactheader'
 
 function App() {
   const [count, setCount] = useState(0)

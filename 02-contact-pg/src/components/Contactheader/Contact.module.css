@@ -4,4 +4,13 @@
 }
  .contact_section p {
     font-size: 20px;
+    padding: 50px;
  }
+
+.contact_section {
+    margin: 50px;
+    padding: 20px;
+}
+.btn-row {
+    display: flex;
+}

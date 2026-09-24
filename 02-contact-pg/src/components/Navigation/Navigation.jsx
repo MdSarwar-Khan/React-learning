@@ -1,9 +1,9 @@
-import logo from "../../assets/logo.png";
-import style from "./Navigation.module.css"
+import logo from '@/assets/logo.png'
+import style from './Navigation.module.css'
 
 const Navigation = () => {
     return (
-        <nav className={'${style.navigation} container'}>
+        <nav className={`${style.navigation} container`}>
             <div className="logo-img">
                 <img src={logo} alt="logo" />
             </div>
@@ -16,4 +16,4 @@ const Navigation = () => {
     )
 };
 
-export default Navigation
+export default Navigation;
