@@ -17,7 +17,7 @@ const Contactheader = () => {
 
       <section className="hero">
         <div className="text-section">
-          <div className="btn-row">
+          <div className={style.btn-row}>
             <Buttons text="VIA SUPPORT CHAT" Icon={ MdMessage } fontSize="24px"/>
             <Buttons text="VIA CALL" Icon={ IoCallSharp }   fontSize="24px"/>
           </div>
