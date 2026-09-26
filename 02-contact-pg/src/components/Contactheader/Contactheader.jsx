@@ -15,14 +15,14 @@ const Contactheader = () => {
         EMAIL, OR SOCIAL MEDIA.
       </p>
 
-      <section className="hero">
+      <section className={style.hero}>
         <div className="text-section">
-          <div className={style.btn-row}>
+          <div className={style.btn_row}>
             <Buttons text="VIA SUPPORT CHAT" Icon={ MdMessage } fontSize="24px"/>
             <Buttons text="VIA CALL" Icon={ IoCallSharp }   fontSize="24px"/>
           </div>
 
-          <button className="email-btn">VIA EMAIL FORM</button>
+          <button className={style.email_btn}>VIA EMAIL FORM</button>
 
           <h4>Name</h4>
           <input type="text" id="name" placeholder="" />
