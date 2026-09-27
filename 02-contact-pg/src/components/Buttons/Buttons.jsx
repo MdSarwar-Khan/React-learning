@@ -12,4 +12,4 @@ const Buttons = (props) => {
     )
 }
 
-export default Buttons;
+export default Buttons; 
