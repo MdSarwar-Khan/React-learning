@@ -1,26 +1,31 @@
 import {useState} from "react";
 
-export default function Player({name, symbol}) 
+export default function Player({initialName, symbol}) 
 {
+    const [playerName , setPlayerName] = useState(initialName)
     const [IsEditing , setIsEditing] = useState(false);
 
     function handleEditClick() {
-        setIsEditing(true);
+        setIsEditing((editing) => !editing); //fn cuz if we sinply do !IsEditing it will work fine but behind the scene react schedule the update and no matter how many time u write the line setISEditing it will always gets intial value (false)
     }
 
-    let playerName = <span className="player-name">{name}</span>;
+    function handleChange(event) {
+        setPlayerName(event.target.value);  //handleChange fn call automatically indicate the target - using onchange event on every key stroke and value- the char entered
+    }
+
+    let editablePlayerName = <span className="player-name">{playerName}</span>;
 
     if(IsEditing)
     {
-        playerName = <input type="text" required />
+        editablePlayerName = <input type="text" required value={playerName} onChange={handleChange}/>
     }
     return (
         <li>
             <span className="player">
-                {playerName}
+                {editablePlayerName}
             <span className="player-symbol">{symbol}</span>
             </span>
-            <button onClick={ handleEditClick }>Edit</button>
+            <button onClick={ handleEditClick }>{IsEditing? 'Save' : 'Edit'}</button>
           </li>
-    );l
+    );
 }
