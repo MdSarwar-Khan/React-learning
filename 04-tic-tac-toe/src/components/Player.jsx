@@ -1,12 +1,16 @@
 import {useState} from "react";
 
-export default function Player({initialName, symbol, isActive}) 
+export default function Player({initialName, symbol, isActive, onChangeName}) 
 {
     const [playerName , setPlayerName] = useState(initialName)
     const [IsEditing , setIsEditing] = useState(false);
 
     function handleEditClick() {
         setIsEditing((editing) => !editing); //fn cuz if we sinply do !IsEditing it will work fine but behind the scene react schedule the update and no matter how many time u write the line setISEditing it will always gets intial value (false)
+        
+        if (IsEditing) {
+        onChangeName(symbol, playerName);
+        }
     }
 
     function handleChange(event) {
