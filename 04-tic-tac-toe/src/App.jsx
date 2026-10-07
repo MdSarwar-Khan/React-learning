@@ -10,30 +10,30 @@ const initialGameBoard = [
   [null, null, null],
   [null, null, null],
   [null, null, null],
-];
+];    //initial gameboxes - null means empty boxes
 
 
-function deriveActivePlayer(gameTurns) {
+function deriveActivePlayer(gameTurns) {    //fnctn tht defines who has the turn
   let currentPlayer = 'X';
 
-      if(gameTurns.length > 0 && gameTurns[0].player === 'X') {
+      if(gameTurns.length > 0 && gameTurns[0].player === 'X') {   //if 1st turn has X then update curnt plye to O
         currentPlayer = 'O';
       }
 
-      return currentPlayer;
+      return currentPlayer;    //toggling currnt plye logic
 }
 
-function deriveWinner(gameBoard, Players) {
+function deriveWinner(gameBoard, Players) {   
     let winner = null;
 
 
- for (const combination of WinningCombinations) {
+ for (const combination of WinningCombinations) {    //loop tht ensure all the gamewin method boxes filled with same player to declare winner
     const firstSquareSymbol = gameBoard[combination[0].row][combination[0].column];
     const secondSquareSymbol = gameBoard[combination[1].row][combination[1].column];
     const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].column];
 
     if  ( firstSquareSymbol &&
-          firstSquareSymbol === secondSquareSymbol &&
+          firstSquareSymbol === secondSquareSymbol &&       //comparing boxes to determine plyr
           firstSquareSymbol === thirdSquareSymbol
         ) {
           winner = Players[firstSquareSymbol];
@@ -46,7 +46,7 @@ function deriveWinner(gameBoard, Players) {
 }
 
 function deriveGameBoard(gameTurns) {
-    let gameBoard = [...initialGameBoard.map(array => [...array])];
+    let gameBoard = [...initialGameBoard.map(array => [...array])];     //copy of gameboard array
 
     for (const turn of gameTurns) {
     const {square, player} = turn;
