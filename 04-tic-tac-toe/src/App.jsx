@@ -102,7 +102,7 @@ function App() {
 
   
 
-  return (          //STRUCTURE OF THE WHOLE WINDOW
+  return (     
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
